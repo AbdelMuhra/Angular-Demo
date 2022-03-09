@@ -1,4 +1,13 @@
-Hello from App Component
+The {{teamName}} is worth ${{team_cost}}
 <br>
 <br>
-<component2></component2>
+Go {{teamName | uppercase}}
+<br>
+<br>
+<!--using pipes to add the currency values and make the text upper case-->
+The {{teamName}} Costs {{team_cost | currency: 'JPY'}}
+<!-- <component2></component2> -->
+<br>
+<br>
+Reverse the team name with pipe: {{teamName | reverse}}
+

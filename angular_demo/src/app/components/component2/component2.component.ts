@@ -8,17 +8,31 @@ import { Person } from 'src/app/models/person.model';
 })
 export class Component2Component implements OnInit {
 
-  somePerson : Person;
+  somePersons : Person[];
   
   constructor() { 
-    this.somePerson ={
-      name: "Abdel",
-      surname: "Muhra",
-      socialsecurity: "123456789"
+    this.somePersons = [];
+    for (var index = 0; index < 10; index++) {
+      this.somePersons.push(
+        {
+          name: this.getRandomSt(),
+          surname: this.getRandomSt(),
+          socialsecurity: this.getRandomSt()
+        });
     }
   }
 
   ngOnInit(): void {
   }
 
+  getRandomSt() : string {
+    var res = "";
+    var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var nl = letters.length;
+    for (var index = 0; index < 5; index++){
+      var charpos = Math.floor(Math.random() * nl);
+      res += letters.charAt(charpos);
+    }
+    return res;
+  }
 }
