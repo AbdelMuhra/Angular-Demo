@@ -1,0 +1,16 @@
+<form #myForm = "ngForm" (ngSubmit)="aFormHasbeenSubmitted(myForm)">
+  <input #var1 = "ngModel" type="text" id="tm1" placeholder="Name of tmate 1" [(ngModel)]="tmate1" name = "tmate1">
+  <br>
+  <br>
+  <span *ngIf="var1.errors?.['required']">Catastrophic Error</span>
+  <input id="tm3" placeholder="Name of tmate 2" [(ngModel)]="tmate2" name = "tmate2">
+  <br>
+  <br>
+  <input *ngIf="hasSecondTeamMate()" type="text" id="tm3" placeholder="Name of tmate 3" [(ngModel)]="tmate3" name = "tmate3">
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+
+Hello {{tmate1}}
