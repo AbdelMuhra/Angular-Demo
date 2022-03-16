@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Contact Number</th>
+  </tr>
+  <ng-container *ngFor="let person of persons">
+    <tr>
+      <td>{{person.name}}</td>
+      <td>{{person.surname}}</td>
+      <td>{{person.phonenumber}}</td>
+    </tr>
+  </ng-container>
+</table>
